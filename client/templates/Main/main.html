@@ -1,0 +1,15 @@
+<template name="main">
+    <div>
+        <h3>Score</h3>
+        {{#each owners}}
+            <div class="well">
+                <h2>{{name}}&nbsp;&nbsp;
+                {{score name}}</h2>
+            </div>
+
+        {{/each}}
+    </div>
+
+    {{>details}}
+
+</template>

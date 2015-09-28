@@ -1,0 +1,21 @@
+<template name="updateScore">
+    <h2>New Scores</h2>
+    <h3>Today: {{formatTime today 'month'}}</h3>
+    <form>
+        {{#each teams}}
+            <h4>{{name}}</h4>
+            <label for="g_{{name}}" style="margin-left: 30px;">Games played
+                <input id='g_{{name}}' type="text" size="5" value="{{gamesPlayed}}">
+            </label>
+            <label for="w_{{name}}" style="margin-left: 30px;">Wins
+                <input id='w_{{name}}' type="text" size="5" value="{{wins}}">
+            </label>
+            <label for="t_{{name}}" style="margin-left: 30px;">Ties
+                <input id='t_{{name}}' type="text" size="5" value="{{ties}}">
+            </label>
+        {{/each}}
+        <br><br>
+        <button type="submit" class="btn btn-primary">OK</button>
+        <button type="button" class="btn btn-primary" id="btnCancel">Cancel</button>
+    </form>
+</template>

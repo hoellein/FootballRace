@@ -1,0 +1,44 @@
+<template name="details">
+
+    <div>
+        <h2>Details</h2>
+        <button class="btn btn-primary" id="updateScore" >Update</button>
+        <br><br>
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
+            <tr rowspan="2">
+                <th>Owner</th>
+                <th>Team</th>
+                <th>GP</th>
+                {{#each dates}}
+                    <th colspan="2">{{formatTime date 'month'}}</th>
+                {{/each}}
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                {{#each dates}}
+                    <th>W</th>
+                    <th>T</th>
+                {{/each}}
+            </tr>
+            </thead>
+            {{#each owners}}
+                <tr rowspan="{{numteams name}}">{{name}}</tr>
+                {{#each teams name}}
+                    <tr>
+                        <td></td>
+                        <td>{{name}}</td>
+                        <td>{{gp name}}</td>
+                        {{#each score name}}
+                            <td>{{wins}}</td>
+                            <td>{{ties}}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            {{/each}}
+
+        </table>
+    </div>
+</template>
